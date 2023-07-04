@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        
+        <variable
+            name="entity"
+            type="com.tumeow.bingo.data.entity.BingoEntity" />
+        
+        <variable
+            name="set_bt"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/random_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:backgroundTint="#00EAA0"
+            android:text="@string/setnum"
+            android:onClickListener="@{set_bt}"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/line4"
+            app:layout_constraintStart_toEndOf="@+id/line3"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/line3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line3"
+            app:layout_constraintVertical_bias="0.3" />
+
+        <View
+            android:id="@+id/line2"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/line4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line4"
+            app:layout_constraintVertical_bias="0.667" />
+
+        <View
+            android:id="@+id/line3"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintHorizontal_bias="0.3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/line4"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintHorizontal_bias="0.667"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/box1"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press1}"
+            android:gravity="center"
+            android:text="@{entity.number1}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/line3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/line3" />
+
+        <CheckBox
+            android:id="@+id/box2"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press2}"
+            android:gravity="center"
+            android:text="@{entity.number2}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintEnd_toStartOf="@+id/line4"
+            app:layout_constraintStart_toEndOf="@+id/line3"
+            app:layout_constraintTop_toTopOf="@+id/line4"
+            app:layout_constraintVertical_bias="0.513" />
+
+        <CheckBox
+            android:id="@+id/box3"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press3}"
+            android:gravity="center"
+            android:text="@{entity.number3}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/line1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/line4"
+            app:layout_constraintTop_toTopOf="@+id/line4" />
+
+        <CheckBox
+            android:id="@+id/box4"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press4}"
+            android:gravity="center"
+            android:text="@{entity.number4}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
+            app:layout_constraintEnd_toStartOf="@+id/line3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <CheckBox
+            android:id="@+id/box5"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press5}"
+            android:gravity="center"
+            android:text="@{entity.number5}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
+            app:layout_constraintEnd_toStartOf="@+id/line4"
+            app:layout_constraintStart_toEndOf="@+id/line3"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <CheckBox
+            android:id="@+id/box6"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press6}"
+            android:gravity="center"
+            android:text="@{entity.number6}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/line2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/line4"
+            app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+        <CheckBox
+            android:id="@+id/box7"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press7}"
+            android:gravity="center"
+            android:text="@{entity.number7}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/line3"
+            app:layout_constraintEnd_toStartOf="@+id/line3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+        <CheckBox
+            android:id="@+id/box8"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press8}"
+            android:gravity="center"
+            android:text="@{entity.number8}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/line3"
+            app:layout_constraintEnd_toStartOf="@+id/line4"
+            app:layout_constraintStart_toEndOf="@+id/line3"
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+        <CheckBox
+            android:id="@+id/box9"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/background_checkbox_select"
+            android:button="@null"
+            android:checked="@={entity.press9}"
+            android:gravity="center"
+            android:text="@{entity.number9}"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@+id/line3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/line4"
+            app:layout_constraintTop_toBottomOf="@+id/line2" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@drawable/bongo_cat_2"
+            android:visibility="@{entity.bingo}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="184dp"
+            android:src="@drawable/giphy"
+            android:visibility="@{entity.bingo}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
